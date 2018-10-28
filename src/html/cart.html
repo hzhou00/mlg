@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>麦乐购-购物车</title>
+	<script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+
+</head>
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/car_css.css">
+	<link rel="stylesheet" type="text/css" href="../css/cartmain.css">
+	<link rel="stylesheet" type="text/css" href="../css/top_bot.css"/>
+
+<body>
+	<section class="top-main">
+		<div class="site-top">
+		    <div class="article">
+		        <div class="fl" id="DivUserStatus">
+		        	<p class="fl">
+		        		<span><a href="../shouye.html">
+		        				<i class="homeicon"></i>麦乐购首页
+		        			</a>
+		        		</span>
+		        		<span class="customName"><a href="#"></a></span>
+		        		<a href="#">退出</a>
+		        	</p>
+		        	<p class="fl forSer">
+		        		<span>联系客服</span>
+		        		<span class="red">400-666-6600</span>
+		        	</p>
+		        </div>
+		        <div class="fr">
+		            <div class="rg">
+		                <div class="mygou"><a href="#">我的麦乐购</a><i>&nbsp;</i>
+		                    <ul class="noneCon">
+		                        <li><a href="#">我的订单</a></li>
+		                        <li><a href="#">我的账户</a></li>
+		                        <li><a href="#">麦豆兑换</a></li>
+		                        <li><a href="#">我的优惠券</a></li>
+		                        <li><a href="#" >我的收藏</a></li>
+		                        <!--<li><a href="#">幸运刮刮卡</a></li>-->
+		                    <!--<li><a href="#">商品溯源查询</a></li>-->
+		                    </ul>
+		                </div><span>|</span>
+		                <div><i class="front icoll"></i><a href="#" onclick="addfavor(window.location,document.title)">收藏麦乐购</a></div><span>|</span>
+		                <div><a href="#">妈妈推广计划</a></div><span>|</span>
+		                <div class="mygou"><i class="front iphone"></i><a href="#">手机麦乐购</a>
+		                    <div class="noneCon" style="padding:0" onclick="window.open('https://www.gou.com/home/app.do')">
+		                              <img src="https://file4.gou.com/kASE5wkAWOMPY2Cqn9e~r~" />
+		                      </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<div class="settleTop">
+			<div class="settleTopMain">
+				<div class="m6goLogo">
+					<a href="../shouye.html"><img src="../image/logo.gif"></a>
+				</div>
+				<div class="stepCarNew">
+					<img src="../image/buzhou.png" width="600px">
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	<!-- 购物车部分 -->
+	<div class="minHeight">
+		<div class="settleMain">
+			<h4>购物车</h4>
+			<form id="CartWindow">
+				<div class="settleCont">
+					<p class="allCho"><input type="checkbox" name="qx">全选</p>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabListSettle">
+						<thead>
+							<tr>
+							    <td width="50%" data-merchantid="0">
+							    <input type="checkbox" checked="checked" name="" data-merchantid="0" data-orderdetailid="0" data-goodsgroupid="-1">由麦乐购发货</td>
+							    <td width="15%" align="center">单价</td>
+							    <td width="15%" align="center">数量</td>
+							    <td width="10%" align="center">小计</td>
+							    <td width="10%" align="center">操作</td>
+							</tr>
+							<tbody>
+								<tr class="by">
+									<td colspan="5" class="saleTd">
+										<div name="baoyou_0">
+											<em>包邮</em>
+											满188元，全场包邮（纸尿裤除外
+											<span id="selefPostage">已包邮</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="by"> 
+									<td colspan="5" style="height:10px; padding:0;">
+										
+									</td>
+								</tr>
+								<tr class="no">
+									<td>
+										<div class="divGoods">
+											<input type="checkbox" ame="cbxGoodsId" checked="checked">
+										</div>
+										<div class="divGoods">
+											<p><a><img src="" id="img"><!--图片--></a></p>
+										</div>
+										<div class="divGoods">
+											<p class="p1 car">
+												<a id="names"><!--名称--></a>
+											</p>
+											<p class="p2"><!--规格留在先--></p>
+										</div>
+									</td>
+									<td align="center" valign="middle" class="tag" iscandiscount="True">
+										￥<span id="xianjia"><!--现价--></span>
+									</td>
+									<td align="center" valign="middle">
+										<a class="sum" title="减一" id="jian"> - </a>
+										<input type="text"  class="sum" id="btn_cha"  name="txtChange" maxlength="4" style="width:30px" value="">
+										<a class="sum" operation="add" title="加一" id="jia">+</a>
+									</td>
+									<td align="center" valign="middle">
+										<span class="red">￥</span>
+										<span class="red" id="xiaoji"><!--小计--></span>
+									</td>
+									<td align="center" valign="middle">
+                                    <a id="del">删除</a>
+                                </td>
+								</tr>
+							</tbody>
+						</thead>
+					</table>
+					<div class="settleInfo"><ul> </ul></div>
+					<div class="carAccount">
+						<div class="carAccountMain">
+							<div class="accountL">
+								<span><input type="checkbox" checked="checked" name="qx">全选</span>
+				                <span><a id="Submit1">清空购物车</a></span>
+				                <span><a href="liebiaoye.html">继续购物</a></span>
+							</div>
+							<div class="accountR">
+								<span name="MScore">获得麦豆：<strong>666</strong></span>
+				                <span name="save">
+				                <span id="subGoodsCount_span" style=" display:none;" data-tempdata="0+0">99<!--商品总共数量--></span>
+				                <span style="display:none">$MJSum&lt;0&gt;</span>
+				                </span>
+				            	<span name="total">
+				                <!-- $subGoodsCount-->
+				                <i><!--商品总共数量--></i>件商品总计：
+				                <em>￥</em>
+				                <em id="zongjia"><!--商品总价--></em>
+				            	</span>
+				            	<input type="button" id="A1" class="accountBtn" value="去结算">
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+	</div>
+
+	<!-- <script type="text/javascript" src="../js/xiangqingye.js"></script> -->
+	
+	<script type="text/javascript" src="../js/cart.js"></script>
+
+
+
+</div>
+	<div width="100%">
+		<img src="../image/dibu.png"  width="100%">
+	</div>
+</body>
+</html>

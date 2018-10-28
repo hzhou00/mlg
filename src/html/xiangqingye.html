@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>       
+    <meta charset="utf-8" />
+    <title> 详情页-麦乐购</title>
+
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+  
+    <link rel="stylesheet" type="text/css" href="../css/top_bot.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/cartmain.css" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/2015main.css" />
+    <script type="text/javascript" src="../js/library-lt.js"></script>
+    
+</head>      
+    
+
+
+<header  class="header"  style="overflow: visible;">
+
+<div id="theLoading" style="position: absolute; z-index: 1000; left: 700px; top: 600px; display: none;">
+    <input type="hidden" id="thisWebSite" value="www.gou.com" />
+    <!-- <img src="https://res.m6go.com/content/image/loading.gif" /> -->
+</div>
+<!--头部新增广告位-->
+   <!--头部新增广告位-->
+   <!--顶部收缩后的小广告条-->
+  <div class="adTop" style="background:#ff3859 ;height:50px;idth:100%; position:relative; z-index:99;display:none">
+    <div class="adTopCont">
+      <a  href="#" alt="a2" ><img src="" width="1000"></a>
+       <span id="btnDown" style="display:none">展开</span>
+        <span id="btnHide"  style="display:none">关闭</span>
+        </div>
+    </div>
+<section class="top-main">
+<div class="site-top">
+    <div class="article">
+        <div class="fl" id="DivUserStatus">
+            
+        </div>
+        <div class="fr">
+            <div class="rg">
+                <div class="mygou"><a href="#">我的麦乐购</a><i>&nbsp;</i>
+                    <ul class="noneCon">
+                        <li><a href="#">我的订单</a></li>
+                        <li><a href="#">我的账户</a></li>
+                        <li><a href="#">麦豆兑换</a></li>
+                        <li><a href="#">我的优惠券</a></li>
+                        <li><a href="#" >我的收藏</a></li>
+                        <!--<li><a href="#">幸运刮刮卡</a></li>-->
+                    <!--<li><a href="#">商品溯源查询</a></li>-->
+                    </ul>
+                </div><span>|</span>
+                <div><i class="front icoll"></i><a href="#">收藏麦乐购</a></div><span>|</span>
+                <div><a href="#">妈妈推广计划</a></div><span>|</span>
+                <div class="mygou"><i class="front iphone"></i><a href="#">手机麦乐购</a>
+                    <div class="noneCon" style="padding:0">
+                              <img src="https://file4.gou.com/kASE5wkAWOMPY2Cqn9e~r~" />
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--head 网站顶部主体-->
+
+ <!--head 网站顶部主体-->
+      <div class="head-top">
+          <div class="article">
+            <div class="search-ind">
+                <a href="" class="logo-ind"><img src="../image/logo.jpg"/></a>
+               <form  id="searchForm" action="#" target="_self" onsubmit="return search_submit()">
+                    <input type="text" id="search_key" name="q" class="txt" value="请输入商品名称,支持拼音搜索"/>
+              <input name="" type="submit" value="搜索" class="sub">
+             </form>
+             <p class="hot">热门关键词:                        
+                <a class="on">小安素</a>
+                <a class="on">防晒</a>
+                <a>牛栏</a>
+                <a>花王</a>
+                <a>美素</a>
+                <a>爱他美</a>
+                <a>karicare</a>
+                <a>喜宝</a>
+            </p>
+            </div>
+            <div class="topAd">
+                <a  href="#" ><img src="../image/topAD.jpg" alt=""></a>
+            </div>
+          <!--ad end-->
+            <div class="clearfix"></div>
+        </div>
+      </div>
+
+  </script>
+</section>
+
+<nav class="nav_ind">
+    <div class="navMain"  stop="true" >
+        <div class="article">
+            <div class="open-menu-btn open-m"><span class="down"></span> 全部商品分类</div>
+            <ul class="navMain-list">
+                <li ><a href="#" target="_self">首页</a></li>
+                <!--进口奶粉-->
+                          <!--进口奶粉-->
+                <li id="jinkounaifen"><a id="jinkounaifen-a" href="#" >进口奶粉</a></li>
+            <!--神妈值得买-->
+                          <!--神妈值得买-->
+                <li id="ShenMaZhideMai"><span class="new"></span><a href="#" >发现好货</a></li>
+                <li  class="effect" >
+                    <a href="#" class="letters turnup" alway="1">
+                        &nbsp;
+                        <span class="words-warp">
+                            <b>整点抢</b>
+                            <b>整点抢</b>
+                        </span>
+                    </a>
+                </li>
+                <!--<li ><a href="#">海外直邮</a></li>-->
+                <li ><span class="hot"></span><a href="#">天天特卖</a></li>
+                <li id="whychoosem6go"><a href=" https://whychoosem6go.gou.com/ ">正品保证</a></li>
+                <!--<li ><a href="#">按月订购</a></li>-->
+                <li id="GlobalTopic"><a href="#">海外直邮</a></li>
+                <li ><a href="#">国家馆</a></li>
+                <li ><a href="http://solution.m6go.com">行业报告</a></li>
+                <li class="onBg"><div class="upaw"></div></li>
+            </ul>
+            <div class="nav-cart">
+                <div class="nc-left">
+                    <a href="cart.html"><i class="icon-cart"></i>去购物车结算</a>
+                </div>
+            </div>
+        </div>
+</header>
+<!--购物车-->
+<div class="gou-cart">
+    <div class="whole">
+      <div class="bearImg"><img src="../image/bearCart.png" width="100%"/></div>
+        <div class="cart-nav">
+            <div class="cart-nav-list">
+                <ul>
+                    <li><a list="0" href="javascript:;")" id="userBtn"><i class="account"></i></a></li>
+                    <li class="cart-i"><a list="1" href="javascript:;" class="message_list" id="shopCartLayerBtn"><i id="collectBox"class="message"></i>
+                        <div class="span">购物车</div><span class="cart_num" id="GQuantity">0</span> </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cart-nav-list bot">
+                <ul>
+                    <li class="kf">
+                        <a href="javascript:;" style="cursor:default"><i class="wxi"></i></a>
+                        <div class="span">客户经理</div>
+                        <a href="javascript:;"><i class="servi"></i></a>
+                        <div class="span">客服</div>
+                        <div class="txt-pro" w="315">
+                            <p class="tactusImg">
+                                  <i class="closeThis"></i>
+                                     <!--登录前-->
+                                     <span class="LoginBefore" style="display:none">
+                                        <a class="tactuslogin" href="javascript:;"><em class="e2">登录</em></a>
+                                        <span class="beforeTit"><em></em></span>
+                                        <span class="beforeTip"><em></em></span>
+                                        <img class='i1' width="315" src="https://www.gou.com/Content/newIndex/image/loginBefore.png?v=201611151" />
+                                     </span>
+                                    <!--登录后-->
+                                    <span class="LoginAfter" style="display:none">
+                                        <span class="afterTit"><em></em></span>
+                                        <span class="afterTip"><em></em></span>
+                                        <img class="i1" width="315" src="https://www.gou.com/Content/newIndex/image/loginAfter.png?v=201611151" />
+                                        <img class="i2" src="/" alt="" />
+                                        <img class="i3_1 headIco" src="/" alt="" />
+                                        <img class="i3_2 headIco" src="/" alt="" />
+                                    </span>
+                            </p>
+                            <div class="tactus" style="display:none">
+                                  <a href="javascript:;" id="kfLink">联系客服</a>
+                            </div>
+                       </div>    
+                    </li>
+                    <li><a list="2" href="javascript:;"><i class="collection"></i></a>
+                        <div class="txt-pro">
+                            <a list = "2" href="javascript:;">我的收藏</a></div>
+                    </li>
+                    <li><a list="3" href="javascript:;" ><i class="view"></i></a>
+                        <div class="txt-pro">
+                            <a list = "3" href="javascript:;">浏览历史</a></div>
+                    </li>
+                    <li><a href="javascript:;"><i class="payto"></i></a>
+                        <div class="module-pro">
+                                <div class="noneCon" style="padding:0">
+                    <img src="https://file4.gou.com/kASE5wkAWOMPY2Cqn9e~r~" />
+                      </div>
+                </div>
+                    </li>
+                    <li><a href="#"><i class="feedicon"></i></a>
+                        <div class="txt-pro">
+                            <a href="#">反馈</a></div>
+                    </li>
+                    <li id="backTop"><a href="javascript:;"><i class="backTop">
+                        <img src="../image/backTop.png" width="35" height="35"></i> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="cart-main-list" class="cart-main-list">
+        <div class="sideLogin" id="sideLogin">
+        </div>
+        <!--加入购物车的商品列表-->
+        <div class="shopcar">
+           
+        </div>
+         <!--我的收藏-->
+          <div class="cart-history" id="divcollect">
+        </div>
+        <!--浏览过的商品-->
+        <div class="cart-history" id="divhistory">
+        </div>
+         <div class="active">
+               <h3></h3>
+             <div class="public-list">
+                  <ol class="act">
+                              <li><!--<a href="" class="img">-->
+            <img src="" style="cursor:pointer" width="255" height="120"/><!--</a>-->
+            <p class="name">
+                </p>
+        </li>
+              <li><!--<a href="" class="img">-->
+            <img src="" style="cursor:pointer" width="255" height="120"/><!--</a>-->
+            <p class="name">
+                </p>
+        </li>
+              <li><!--<a href="" class="img">-->
+            <img src="" style="cursor:pointer" width="255" height="120"/><!--</a>-->
+            <p class="name">
+                </p>
+        </li>
+              <li><!--<a href="" class="img">-->
+            <img src="" style="cursor:pointer" width="255" height="120"/><!--</a>-->
+            <p class="name">
+                </p>
+        </li>
+              <li><!--<a href="" class="img">-->
+            <img src="" style="cursor:pointer" width="255" height="120"/><!--</a>-->
+            <p class="name">
+                </p>
+        </li>
+              <li><!--<a href="" class="img">-->
+            <img src="" style="cursor:pointer" width="255" height="120"/><!--</a>-->
+            <p class="name">
+                </p>
+        </li>
+                    </ol>
+             </div>
+          </div>
+    </div>
+</div>
+
+
+<div class="breadcrumb shareW">
+    <a href="/">首页</a>>
+        <span>宝宝玩具</span>
+</div>
+
+    <!-- 详情页渲染 -->
+        <div class="shareW productInfo" data-pro="3">
+    <!--图-->
+            <div class="preview">
+                <!-- 渲染图片 -->
+                <div class="jqzoom" id="spec-n1">
+                    <img height="350" id="img" src="" jqimg="https://file.m6go.com/yBriJJP~bk2f1rdlDV7TW_/50" width="350" alt="">
+                </div>
+                <div id="spec-n5">
+                    <div class="control" id="spec-left"></div>
+                    <div id="spec-list">
+                        <ul class="list-h" data-count="4" style="width: 244px; overflow: hidden;">
+                            <li>
+                                <img class="" src="https://file4.m6go.com/RZLv3U5NaOia~EJLCcNYjL/50" height="50"></li>
+                            <li>
+                                <img src="https://file3.m6go.com/tXtTChasj4YXY9YGN_PG~c/50" width="50" height="50" class=""></li>
+                            <li>
+                                <img src="https://file.m6go.com/yBriJJP~bk2f1rdlDV7TW_/50"  width="50" height="50" class="imgHover"></li>
+                            <li>
+                                <img src="https://file.m6go.com/Xeke3zNf3OqAnHG2dfkj_Z/50" width="50" height="50" class=""></li>
+                        </ul>
+                    </div>
+                    <div class="control" id="spec-right"></div>
+                </div>
+                <div class="addBox">
+                    <ul>
+                        <li class="sc">
+                            <a href="javascript:void(0);">收藏商品：（2人气）</a></li>
+                    </ul>
+                </div>
+                <div class="overLeftKf">
+                    <a href="javascript:;">
+                    <i class="iconNe"></i>在线客服</a>
+                    <i class="iconph"></i>服务热线：400-666-6600</div>
+            </div>
+            
+            <div class="goodsName">
+                <h1>
+                    <font color="red" id="names"></font><!-- 渲染商品名--></h1>
+                <span></span>
+            </div>
+            <!--参数-->
+            <div class="goodsPay">
+                <ul>
+                    <li class="  sumPriceNow bgGray ">
+                        <div class="dt" id="priceLabel">销 售 价：</div>
+                        <div class="dd countDd">
+                            <!--sku属性-->
+                            <input type="hidden" id="StockCount_NP" name="StockCount_NP" value="">
+                            <font size="3px" color="#CC1D00">￥</font>
+                            
+                            <span id="SGoodsPrice"><!-- 渲染现价 --></span>
+                            <div id="temai"></div>
+                            <p id="p_babyfvl"></p>
+                        </div>
+                    </li>
+                    <li class="sumPriceOld bgGray">
+                        <div class="dt">价&nbsp;&nbsp;格：</div>
+                       
+                        <div class="dd">
+                            <span>
+                                <del id="yuanjia"> <!-- 渲染原价 --></del>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="ass">
+                        
+                        <span>累计销量：<em id="xiaoliang"><!-- 渲染销量--></em><i>|</i></span>
+                        <span>累计评价：<em id="pingjia"><!-- 渲染评价--></em><i>|</i></span>
+                        <span>赠送麦豆：<em id="goodsScore">4</em></span>
+                    </li>
+                    <li class="sumChoose">
+                        <div class="dt">
+                            <span style="letter-spacing:23px;font-family: SimSun;">规</span>格：</div>
+                        <div class="dd">
+                            <a class="hover" href="#">米莉</a>
+                            <a href="#">金刚</a>
+                            <a href="#">淘淘</a>
+                            <a href="#">酷雷</a></div>
+                    </li>
+                    <form id="buyForm" name="buyForm">
+                        <li class="sumChoose" name="propertyselect" style="display:none;">
+                            <div class="dt">规格：</div>
+                            <div class="dd">
+                                <a id="pA_16_41" rel="16-41" href="javascript:void(0);" class="hover">个</a>
+                                <input id="pI_16_41" name="pI_16" type="radio" checked="checked" value="16:41_规格：个" style="display:none;"></div>
+                        </li>
+                        <li class="sumNum">
+                            <div class="dt">购买数量：</div>
+                            <div class="dd" id="dddiv">
+                                <input type="hidden" id="isBuyNow" value=" 0">
+                                <a style="border-right:none;" id="jian">-</a>
+                                <input name="Amount" id="Amount" type="text" value="1" class="textNum" maxlength="2" data-maxbuycount="" style="ime-mode:disabled;" onkeyup="onlyNumber(this );" autocomplete="off">
+                                <a style="border-left:none;" id="jia">+</a>
+                                
+                                <span id="divStockCount">（库存
+                                    <span id="stockCountSpan" class="stockCount">999999</span>件）</span>
+                                <span id="div_outstock" style="display:none; text-indent:0px;">库存紧张</span>
+                               
+                                <p id="buyNowMsg" style="color:Red;padding-left: 15px;vertical-align: middle;display: inline-block;"></p>
+                            </div>
+                        </li>
+                        <div style="clear:both;"></div>
+                    </form>
+                </ul>
+               
+                <div></div>
+                <div class="buyBtn">
+                    <span id="divBtn">
+                        <a id="buyA" href="javascript:void(0);" class="btnMain" style="width:160px;height:42px;line-height:42px">加入购物车</a></span>
+                    <!--一听试购-->
+                    <!--国际直邮--></div>
+                <div class="buyRest">
+                    <p class="p1" title="中华保险正品保证">
+                        <i style="../image/mainCon.png) no-repeat -28px -116px;"></i>中华保险正品保证</p>
+                    <p class="p2" title="百分之百安心产品">
+                        <i style="../image/mainCon.png) no-repeat -54px -116px;"></i>百分之百安心产品</p>
+                    <p class="p3" title="专业营养师喂养咨询">
+                        <i style=" ../image/mainCon.png) no-repeat -80px -116px;"></i>专业营养师喂养咨询</p>
+                </div>
+                <!--窄屏end-->
+                <p class="reminder">
+                    <span class="sL">温馨提示：</span>
+                    <span class="sR" id="reminderR">
+                        <i>由麦乐购负责配送</i>
+                    </span>
+                </p>
+                    <div class="clear"></div>              
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+
+
+    <!-- 渲染结束 -->
+
+
+
+
+
+<footer id="footer">
+        <!--底部导航帮助-->
+                
+        <!--foot end-->
+        <!--尾部代码开始-->
+    <div  class="footer"  >
+    <div class="promise mtop30">
+      <div class="article">
+         <dl class="pro1">
+          <span class="i1"></span>
+          <dt>海外采购</dt>
+          <dd>精选海外优质品牌</dd>
+         </dl>
+         <dl class="pro2">
+          <span class="i2"></span>
+          <dt>国内外三重检疫</dt>
+          <dd>严把质量关 无忧购物</dd>
+         </dl>
+         <!--<dl class="pro2">
+          <span  class="i3"></span>
+          <dt>中华保险承保</dt>
+          <dd>正品保证</dd>
+         </dl>-->
+         <dl class="pro2">
+          <span  class="i4"></span>
+          <dt>专属育婴师服务</dt>
+          <dd>一对一专业育婴指导</dd>
+         </dl>
+         <dl class="pro3">
+          <span  class="i5"></span>
+          <dt>满188元包邮</dt>
+          <dd>尊享免费航空快递</dd>
+         </dl>
+      </div>
+    </div>
+    
+        <div class="article">
+          <div class="forLink">
+          <dl>
+                <dt>购物指南</dt>
+                          <dd><a href="#">为什么选麦乐购</a></dd>
+                          <dd><a href="#">购物流程</a></dd>
+                          <dd><a href="#">正品保证</a></dd>
+                          <dd><a href="#">手机麦乐购</a></dd>
+            </dl>
+          <dl>
+                <dt>配送方式</dt>
+                          <dd><a href="#">跨境电商介绍</a></dd>
+                          <dd><a href="#">报关说明</a></dd>
+                          <dd><a href="#">配送说明</a></dd>
+                          <dd><a href="#">国际快递查询</a></dd>
+                          <dd><a href="#">国内快递查询</a></dd>
+          </dl>
+                  <dl>
+                <dt>支付方式</dt>
+                          <dd><a href="#">支付方式介绍</a></dd>
+                          <dd><a href="#">优惠券支付</a></dd>
+                          <dd><a href="#">余额支付</a></dd>
+              </dl>
+                  <dl>
+                <dt>售后服务</dt>
+                          <dd><a href="#">联系客服</a></dd>
+                          <dd><a href="#">验货签收</a></dd>
+                          <dd><a href="#">退换货政策</a></dd>
+                          <dd><a href="#">退款说明</a></dd>
+                          <dd><a href="#">关于发票</a></dd>
+          </dl>
+                  <dl>
+                <dt>特色服务</dt>
+                          <dd><a href="#">麦豆说明</a></dd>
+                          <dd><a href="#">会员级别</a></dd>
+                          <dd><a href="#">商务会员卡</a></dd>
+                          <dd><a href="#">VIP会员尊享卡</a></dd>
+                          <dd><a href="#">妈妈推广计划</a></dd>
+          </dl>
+         <div class="gouApp">
+           <h3>手机麦乐购</h3>
+                             <img src="https://file4.gou.com/l1VomIKv7~mJ5PZACAjipM" width="95" height="95"/>
+           </div>
+      </div>
+       </div>
+       <div class="about">
+        <p class="abLink">
+          <a href="#">关于麦乐购</a><span>|</span>
+          <a href="#">保税店专区</a><span>|</span>
+          <a href="#">商户合作</a><span>|</span>
+          <a href="#">O2O合作</a><span>|</span>
+          <a href="#">联系我们</a><span>|</span>
+          <a href="#">友情链接</a><span>|</span>
+          <a href="#">诚聘英才</a><span>|</span>
+          <a href="#">手机麦乐购</a><span>|</span>
+          <a href="#">意见建议</a><span>|</span>
+          <a href="#">媒体报道</a>
+        </p>
+                                     <p style=" margin-top:10px;"><a style="color:black" href="#"> <img src="https://res.m6go.com/content/dgH/image/gonganbeian.png">京公网安备：11010102000812号</a>  | 中华人民共和国出版物经营许可证编号：150023 | 广电制作经营许可证：(京)字第06356号</p>
+
+     <p>网络文化经营许可证：京网文(2016)4048-509号 | 食品经营许可证编号：JY11101070034785 | 食品卫生许可证编号：110101_JX0020 | 互联网药品信息服务证书编号：(京)-2016-0095</p>
+
+     <p>Copyright 2006 - 2016 北京天使圣婴科技有限公司版权所有 | 经营许可证编号：京ICP证150027号 | 营业执照：911101010672694772 |  京ICP备14022296号 | 中国服务热线：400-666-6600</p>
+                                              <aside class="newcor">
+            <a href="#" title="正品保证"><img src="https://file.m6go.com/g_d0e_tJA~EPKNXBrwHZPx"/></a>
+            <a href="#" title="折扣商城"><img src="https://file3.m6go.com/orubbcRtdkilHypd4JgfpB"/></a>
+            
+            <a href="#" title="受妈妈欢迎的商城"><img src="https://file7.m6go.com/_~chcjKD7Oe3M14qJ01wRt"/></a>
+          </aside>
+            </div>
+    
+</footer>
+    <!-- <script type="text/javascript" src="../js/liebiaoye.js"></script> -->
+    <script src="../js/xiangqingye.js" type="text/javascript"></script>
+</body>
+</html>

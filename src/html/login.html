@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta  charset="UTF-8" />
+    <title>登录-麦乐购</title>   
+    <link href="../css/car_css.css" rel="stylesheet" type="text/css" />
+    <link href="../css/top_bot.css" rel="stylesheet" type="text/css" />  
+</head>
+<body>
+    <div class="settleTop regTop">
+        <div class="settleTopMain">
+            <div class="m6goLogo">
+                <img style="cursor:pointer"  src="../image/logo.gif" onclick="window.location.href='../shouye.html'" width="260" height="83">
+            </div>
+            <div class="stepCar">
+                <img src="../image/zhucePic.png" width="502" height="44"
+                style="display: block;float: right;">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!-- logo step end-->
+    <!--主体内容开始-->   
+    <div class="regMain">
+        <div class="regLeft">
+            <a href="#"><img src="../image/entry.png" height="200px"/></a>
+        </div>
+        <div class="regRight">
+            <h3>登录</h3>
+            <span class="rR"><a href="reg.html">免费快速注册</a> </span>
+            <div class="clear"></div>
+            <form id="loginForm" name="loginForm" action="#" method="post">
+                <input type="hidden" name="backurl" value="" />
+                <input type="hidden" name="grabrecordid" value="" />
+                <input type="hidden" name="grabtime" value="" />
+                <ul>
+                    <li class="liLab">
+                        <label class="user">
+                        </label>
+                        <!--    value="手机号码/邮箱/用户名"-->
+                        <input type="text" name="username" id="username" placeholder="手机号码" title="手机号码" value="" class="user" />
+                        <p id="usernam_err" class="focusTex">
+                            
+                        </p>
+                    </li>
+                    <li class="liLab">
+                        <label class="pass">
+                        </label>
+                        <input type="password" name="pwd" id="pwd" value="" placeholder="密码" title="密码" maxlength="20"class="pass" />
+                        <p id="pwd_err" class="focusTex">
+                            
+                        </p>
+                    </li>
+                    <li>
+                         <input type="text" value="" class="code" placeholder="验证码" title="验证码" maxlength="4" name="vcode" id="codes" /> 
+                        <input type="button" id="verifyCode" >
+                        <p id="code_err" class="focusTex"></p>
+                    </li>
+                    <li>
+                   <!--     <input type="checkbox" class="check" checked="checked" name="keepLogin" />两周内免登录-->
+                        <a href="#" style="float: right">忘记密码？</a> 
+                    </li>
+                    <li>
+                        <input id="userLogin_A" type="submit" value="登录" class="btn"    href="javascript:void(0)"/>
+                        <!-- <input type="submit" id="btnTest" value="测试按钮"> -->
+                    </li>
+                    <li>
+                        <p class="otherReg">
+                            使用其它帐号登录：                        
+                           <a class="qq" title="使用QQ账号登录">QQ帐号登录</a>
+                           <a class="aliPay" style="cursor: pointer;" title="使用支付宝账号快捷登录">支付宝帐号登录</a>
+                           <a class="ws360" href="#" title="360联盟账号登录">360帐号登录</a>
+                            <a class="sina" title="新浪微博登录">新浪微博帐号登录</a>
+                        </p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <!--尾部代码开始-->
+    <footer id="footer">
+        <div  class="footer"  >
+            <div class="about" style="margin-top:50px;">
+		 	    <p class="abLink">
+    		 	 	<a href="#">关于麦乐购</a>
+                    <span>|</span>
+                    <a href="#">保税店专区</a>
+                    <span>|</span>
+    		 	 	<a href="#">服务条款</a>
+                    <span>|</span>
+    		 	 	<a href="#">商户合作</a>
+                    <span>|</span>
+    				<a href="#">O2O合作</a>
+                    <span>|</span>
+    		 	 	<a href="#">联系我们</a>
+                    <span>|</span>
+    		 	 	<a href="#">友情链接</a>
+                    <span>|</span>
+    		 	 	<a href="#">诚聘英才</a>
+                    <span>|</span>
+    		 	 	<a href="#">手机麦乐购</a>
+                    <span>|</span>
+    		 	 	<a href="#">意见建议</a>
+                    <span>|</span>
+    		 	 	<a href="#">媒体报道</a>
+                </p>
+                <p style=" margin-top:10px;">
+                    <a target="_blank" style="color:black" href="#">
+                    <img src="../image/gonganbeian.png">京公网安备：11010102000812号
+                    </a> 
+                     | 中华人民共和国出版物经营许可证编号：150023 | 广电制作经营许可证：(京)字第06356号
+                </p>
+                <p>网络文化经营许可证：京网文(2016)4048-509号 |  食品经营许可证编号：JY11101070034785 | 食品卫生许可证编号：110101_JX0020 | 互联网药品信息服务证书编号：(京)-2016-0095
+                </p>
+                <p> Copyright 2006 - 2016 北京天使圣婴科技有限公司版权所有 |   经营许可证编号：京ICP证150027号 | 营业执照：911101010672694772 |  京ICP备14022296号 | 中国服务热线：400-666-6600
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!--尾部代码结束-->
+
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+
+
+</body>
+</html>

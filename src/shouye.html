@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head> 
+  <meta  charset="utf-8" /> 
+ 
+  <title>麦乐购</title> 
+      <script src="lib/jquery-1.4.4.min.js" type="text/javascript"></script>  
+      <script src="js/respond.min.js" type="text/javascript"></script>
+      <link href="#" id="respond-proxy" rel="respond-proxy" />
+
+      <link id="contH5Css" href="css/main.css" rel="stylesheet" type="text/css" /> 
+      <link href="css/jquery.autocomplete.css" rel="stylesheet" type="text/css" /> 
+      <script src="js/common.js" type="text/javascript"></script> 
+
+</script>
+  <script type="text/javascript" language="javascript">
+var serverHour= 17;
+</script>
+</head>   
+<body> 
+  <!--网站头部开始--> 
+  <link rel="stylesheet" type="text/css" href="css/top_bot.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/cartmain.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/base.css" /> 
+  <link rel="stylesheet" type="text/css" href="css/2015main.css" /> 
+  <script type="text/javascript" src="js/library-lt.js"></script> 
+
+  <header class="header" style="overflow: visible;"> 
+   <div id="theLoading" style="position: absolute; z-index: 1000; left: 700px; top: 600px; display: none;"> 
+    <input type="hidden" id="thisWebSite" /> 
+    <img src="image/loading.gif" /> 
+   </div> 
+   <!--头部新增广告位--> 
+   <!--头部新增广告位--> 
+   <!--顶部收缩后的小广告条--> 
+   <div class="adTop" style="background:#ff3859 ;height:50px;  width:100%; position:relative; z-index:99;display:none"> 
+    <div class="adTopCont"> 
+      <a href="#" ">
+        <img src="image/guangg.jpg" width="1000" />
+      </a> 
+     <span id="btnDown" style="display:none">展开</span> 
+     <span id="btnHide" style="display:none">关闭</span> 
+    </div> 
+   </div> 
+   <!--顶部广告结束--> 
+    <script type="text/javascript">
+      //顶部广告收缩效果
+      $(function () {
+        var webGlobal = $("#webGlobalSite").val();
+        if ($("#currentMenu").val() == "home" && webGlobal.indexOf("www") > 0) {
+          $("#btnDown").show();
+          $("#btnHide").hide();
+        } else {
+        if (getCookie('hideAd') == "none") {
+           $('.adTop').css('display', 'none');
+        } else {
+            $("#btnDown").css('display', 'none');
+            $("#btnHide").css('display', 'block');
+            $('.adTop').css('display', 'block');
+            $('.adTopCont').css('display', 'block');
+          }
+      }
+      var TimeId = 0;
+      $('#btnDown').click(function () {
+        ShowDaTu();
+        TimeId = setTimeout("hideDaTu()", 5000);
+      });
+      $('#btnUp').click(function () {
+        clearTimeout(TimeId);
+        hideDaTu();
+      });
+    }); 
+  </script> 
+  <script type="text/javascript">
+    $(function () {
+    //顶部我的麦乐购和手机麦乐购弹出层效果
+    siteEfect()
+  })
+</script> 
+  <section class="top-main"> 
+    <div class="site-top"> 
+     <div class="article"> 
+      <div class="fl" id="DivUserStatus">
+              <p class="fl">
+                <span><a href="shouye.html">
+                    <i class="homeicon"></i>麦乐购首页
+                  </a>
+                </span>
+                <span class="customName"><a href="#"></a></span>
+                <a href="html/login.html">登录</a>
+                <a href="html/reg.html">注册</a>
+              </p>
+              <p class="fl forSer">
+                <span>联系客服</span>
+                <span class="red">400-666-6600</span>
+              </p>
+            </div>
+      <div class="fr"> 
+       <div class="rg"> 
+        <div class="mygou">
+         <a href="#">我的麦乐购</a>
+         <i>&nbsp;</i> 
+         <ul class="noneCon"> 
+          <li><a href="#">我的订单</a></li> 
+          <li><a href="#">我的账户</a></li> 
+          <li><a href="#">麦豆兑换</a></li> 
+          <li><a href="#">我的优惠券</a></li> 
+          <li><a href="#">我的收藏</a></li> 
+         </ul> 
+        </div>
+        <span>|</span> 
+        <div>
+         <i class="front icoll"></i>
+         <a href="#">收藏麦乐购</a>
+        </div>
+        <span>|</span> 
+        <div>
+         <a href="#">妈妈推广计划</a>
+        </div>
+        <span>|</span> 
+        <div class="mygou">
+         <i class="front iphone"></i>
+         <a href="#">手机麦乐购</a> 
+         <div class="noneCon" style="padding:0"> 
+          <img src="image/xiazai.jpg" /> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!--head 网站顶部主体--> 
+    <!--head 网站顶部主体--> 
+    <div class="head-top"> 
+      <div class="article"> 
+        <div class="search-ind"> 
+          <a href="" class="logo-ind">
+
+            <img src=" image/logo.jpg " />
+          </a> 
+          <form id="searchForm" action="#"  onsubmit="return search_submit()"> 
+            <input type="text" id="search_key" name="q" class="txt" value="请输入商品名称,支持拼音搜索" onblur="search_key_blur(this)" /> 
+            <input name="" type="submit" value="搜索" class="sub" /> 
+          </form> 
+          <p class="hot"> 热门关键词: 
+            <a href="#" class="on">小安素</a>
+            <a href="#" class="on">防晒</a>
+            <a href="#" >牛栏</a>
+            <a href="#" >花王</a>
+            <a href="#" >美素</a> 
+            <a href="#" >哈宝</a> 
+            <a href="#" >karicare</a> 
+            <a href="#" >喜宝</a> 
+          </p> 
+        </div> 
+      <div class="topAd"> 
+        <a href="#" > 
+          <img src="image/aozhouAD.jpg" alt="" /> 
+        </a> 
+      </div> 
+      <!--ad end--> 
+      <div class="clearfix"></div> 
+     </div> 
+    </div> 
+    <!-- 搜索代码 -->
+    <script type="text/javascript">
+      $(function () {
+        var value = "请输入商品名称,支持拼音搜索";
+        $('#search_key').blur(function () {
+          search_key_blur(this, value);
+        });
+          $('#search_key').focus(function () {
+            search_key_focus(this, value);
+        });
+      });
+    </script>
+  </section> 
+  <nav class="nav_ind"> 
+    <div class="navMain"> 
+     <div class="article"> 
+      <div class="open-menu-btn open-m">
+       <span class="down"></span> 全部商品分类
+      </div> 
+      <ul class="navMain-list"> 
+        <li class="on">
+          <a href="#">首页</a>
+        </li> 
+       <!--进口奶粉--> 
+       <!--进口奶粉--> 
+        <li id="jinkounaifen" >
+          <a id="jinkounaifen-a" href="html/login.html">进口奶粉</a>
+        </li> 
+       <!--神妈值得买--> 
+       <!--神妈值得买--> 
+       <li id="ShenMaZhideMai" >
+        <span class="new"></span>
+        <a href="html/login.html">发现好货</a></li> 
+       <li class="effect"> <a href="html/login.html" class="letters turnup" alway="1"style="width:82px;" > &nbsp; <span class="words-warp"> <b>整点抢</b> <b>整点抢</b> </span> </a> </li> 
+        
+       <li><span class="hot"></span><a href="html/login.html">天天特卖</a></li> 
+       <li id="whychoosem6go" ><a href="#">正品保证</a></li> 
+        
+       <li id="GlobalTopic"><a href="html/login.html">海外直邮</a></li> 
+       <li ><a href="html/login.html">国家馆</a></li> 
+       <li class="onBg">
+        <div class="upaw"></div></li> 
+      </ul> 
+      <div class="nav-cart"> 
+       <div class="nc-left"> 
+        <a href="#"><i class="icon-cart"></i>去购物车结算</a> 
+       </div> 
+      </div> 
+      <!--nav-cart end--> 
+     </div> 
+     <!--left menu--> 
+     <div class="menuBox"> 
+      <!--left menu list--> 
+      <ul id="ul-cont" class="nav-list open-m"> 
+        <li> 
+          <i class="nav-icon bg1"></i>
+            <h3><a href="#"> 宝宝奶粉 </a> </h3>
+              <p><a href="#"> 牛奶粉</a> 
+                <a href="#"> 羊奶粉</a> <a href="#"></a> 
+              </p> <span class="nav-arrow"></span> 
+          </li> 
+        <li> <i class="nav-icon bg2"></i> 
+          <h3> <a href="#"> 宝宝辅食 </a> </h3> 
+            <p><a href="#"> 米粉</a> <a href="#"> 宝宝零食</a> <a href="#"> </a> 
+            </p> <span class="nav-arrow"></span> 
+        </li> 
+       <li> <i class="nav-icon bg6"></i> <h3> <a href="#" > 营养保健 </a> </h3> <p><a href="#" > 宝宝营养</a> <a href="#" > 成人营养</a> <a href="#" > </a> </p> <span class="nav-arrow"></span> </li> 
+       <li> <i class="nav-icon bg3"></i> <h3> <a href="#" > 宝宝用品 </a> </h3> <p><a href="#" > 纸尿裤</a> <a href="#" > 喂养</a> <a href="#" > 洗护</a> </p> <span class="nav-arrow"></span> </li> 
+       <li> <i class="nav-icon bg4"></i> <h3> <a href="#" > 宝宝服饰 </a> </h3> <p><a href="#" > 婴幼服饰</a> <a href="#" > 童装</a> <a href="#" > 童鞋</a> </p> <span class="nav-arrow"></span> </li> 
+       <li> <i class="nav-icon bg5"></i> <h3> <a href="#" > 宝宝玩具 </a> </h3> <p><a href="#" > 婴幼玩具</a> <a href="#" > 遥控/电动</a> <a href="#" > </a> </p> <span class="nav-arrow"></span> </li> 
+       <li> <i class="nav-icon bg7"></i> <h3> <a href="#" > 孕产妇用品 </a> </h3> <p><a href="#" > 孕妈营养</a> <a href="#" > 产前产后</a> <a href="#" > </a> </p> <span class="nav-arrow"></span> </li> 
+       <li> <i class="nav-icon bg9"></i> <h3> <a href="#" > 个护化妆 </a> </h3> <p><a href="#" > 夏季防晒</a> <a href="#" > 面部护肤</a> <a href="#" > </a> </p> <span class="nav-arrow"></span> </li> 
+       <li> <i class="nav-icon bg8"></i> <h3> <a href="#" > 居家生活 </a> </h3> <p><a href="#" > 食品饮料</a> <a href="#" > 生活日用</a> <a href="#" > </a> </p> <span class="nav-arrow"></span> </li> 
+      </ul> 
+      <!--left menu content--> 
+      <div class="menu-con" id="menuCon"> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>热门品牌</strong> <a class="" href="#" >荷兰牛栏Nutrilon</a> <a class="on1" href="#" >德国爱他美Aptamil</a> <a class="on1" href="#" >德国喜宝Hipp</a> <a class="" href="#" >荷兰美素Hero Baby</a> <a class="" href="#" >英国牛栏Cow＆Gate</a> <a class="on1" href="#" >新西兰爱他美Aptamil</a> <a class="on1" href="#" >德国特福芬Topfer</a> <a class="" href="#" >英国爱他美Aptamil</a> <a class="" href="#" >新西兰Karicare</a> <a class="" href="#" >澳洲a2</a> <a class="" href="#" >德国凯莉泓乐Holle</a> <a class="" href="#" >英国Nannycare</a> <a class="on1" href="#" > 澳洲贝拉米Bellamy's</a> <a class="on1" href="#" >英国纽康特Neocate</a> <a class="" href="#" >美国美赞臣Meadjohnson</a> <a class="" href="#" >美国雅培Similac</a> <a class="" href="#" >新西兰惠氏Wyeth </a> </p> 
+         <p> <strong>优惠套餐</strong> <a class="on1" href="#" >买7送1</a> <a class="" href="#" >4罐优惠</a> <a class="" href="#" >2罐优惠</a> </p> 
+         <p> <strong>适用年龄</strong> <a class="" href="#" >0-6个月</a> <a class="" href="#" >6-12个月</a> <a class="on1" href="#" >1-2岁</a> <a class="" href="#" >2-3岁</a> <a class="" href="#" >3-6岁</a> <a class="" href="#" >儿童奶粉</a> <a class="on1" href="#" >儿童奶粉（直邮）</a> </p> 
+         <p> <strong>奶粉分类</strong> <a class="on1" href="#" >牛奶粉</a> <a class="on1" href="#" >羊奶粉</a> <a class="on1" href="#" >有机奶粉</a> <a class="" href="#" >益生菌奶粉</a> <a class="" href="#" >牛乳蛋白过敏奶粉</a> <a class="on1" href="#" >乳糖不耐受奶粉</a> <a class="" href="#" >早产儿奶粉</a> <a class="" href="#" >孕妇奶粉</a> <a class="on1" href="#" >宝宝奶粉（直邮）</a> </p> 
+        </div> 
+       </div> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>热门品牌</strong> <a class="on1" href="#" >德国喜宝Hipp</a> <a class="" href="#" >美国嘉宝Gerber</a> <a class="on1" href="#" >美国世界最好Earth's Best</a> <a class="" href="#" >美国禧贝Happybaby</a> <a class="on1" href="#" >德国长发公主Rapunzel</a> <a class="" href="#" >ZEK</a> <a class="on1" href="#" >天然世家</a> <a class="on1" href="#" >韩国宝噜噜</a> <a class="" href="#" >美国Yummy Earth</a> <a class="" href="#" >亨氏Heinz</a> <a class="" href="#" >韩国海地村</a> <a class="" href="#" >LittleFreddie小皮</a> <a class="on1" href="#" >韩国托马斯Thomas</a> <a class="" href="#" >伊威Eastwes</a> <a class="" href="#" >荷兰牛栏</a> <a class="" href="#" >方广</a> <a class="" href="#" >英国艾拉厨房</a> <a class="" href="#" >韩国宝宝福德Baby food</a> <a class="on1" href="#" >意大利黛乐Dalla Costa</a> </p> 
+         <p> <strong>辅食分类</strong> <a class="on1" href="#" >米粉/麦粉/粥</a> <a class="on1" href="#" >肉泥/果泥/菜泥</a> <a class="" href="#" >饮料/果汁</a> <a class="" href="#" >调味/拌饭/油</a> <a class="on1" href="#" >鱼肠/肉肠</a> <a class="" href="#" >面条类</a> <a class="on1" href="#" >宝宝零食</a> <a class="on1" href="#" >宝宝辅食（直邮）</a> </p> 
+         <p> <strong>月龄</strong> <a class="" href="#" >辅食添加初期</a> <a class="" href="#" >4-6月</a> <a class="" href="#" >7-9月</a> <a class="" href="#" >10-12月</a> <a class="" href="#" >12至36个月</a> <a class="" href="#" >4至36个月</a> <a class="" href="#" >6至36个月</a> </p> 
+         <p> <strong>优惠套餐</strong> <a class="" href="#" >2瓶优惠</a> <a class="on1" href="#" >4盒优惠</a> </p> 
+        </div> 
+       </div> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>宝宝营养热门品牌</strong> <a class="on1" href="#" >美国Childlife</a> <a class="" href="#" >澳洲Bio Island</a> <a class="on1" href="#" >鑫福来</a> <a class="on1" href="#" >美国康萃乐Culturelle</a> <a class="" href="#" >加拿大Ddrops</a> <a class="" href="#" >挪威小鱼Nordic naturals</a> <a class="" href="#" >佳思敏Nature's Way </a> <a class="on1" href="#" >美国Martek</a> </p> 
+         <p> <strong>功效</strong> <a class="" href="#" >DHA/鱼油</a> <a class="on1" href="#" > 钙镁锌铁</a> <a class="" href="#" > 维生素/VD</a> <a class="" href="#" >益生菌</a> <a class="on1" href="#" >补脑益智</a> <a class="on1" href="#" >提高免疫力</a> <a class="" href="#" >调节肠胃</a> <a class="" href="#" >清火降火</a> </p> 
+         <p> <strong>营养人群</strong> <a class="" href="#" >父母健康</a> <a class="" href="#" >男士保健</a> <a class="" href="#" >魅力女士</a> <a class="" href="#" >青少年营养</a> <a class="" href="#" >孕妈营养</a> <a class="" href="#" >宝宝营养</a> <a class="on1" href="#" >宝宝营养（直邮）</a> <a class="on1" href="#" >成人保健品（直邮）</a> </p> 
+         <p> <strong>成人营养热门品牌</strong> <a class="on1" href="#" >澳洲Swisse</a> <a class="" href="#" >新西兰好健康Goodhealth</a> <a class="on1" href="#" >美国康宝莱Herbalife</a> <a class="" href="#" >澳洲澳佳宝Blackmores</a> <a class="" href="#" >澳洲Healthy Care</a> <a class="on1" href="#" >德国铁元</a> <a class="on1" href="#" >美国自然之宝</a> <a class="" href="#" >美国安利Amway</a> </p> 
+         <p> <strong>功效</strong> <a class="on1" href="#" >美容养颜</a> <a class="on1" href="#" >瘦身排毒</a> <a class="" href="#" >提高免疫力</a> <a class="" href="#" >补脑益智</a> <a class="on1" href="#" >调节内分泌</a> <a class="on1" href="#" >调节三高</a> <a class="" href="#" >眼疲劳/明目</a> <a class="" href="#" >胃肠调节</a> <a class="on1" href="#" >改善睡眠</a> <a class="on1" href="#" >改善贫血</a> </p> 
+        </div> 
+       </div> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>热门品牌</strong> <a class="on1" href="#" >日本花王Merries</a> <a class="" href="#" >日本尤妮佳Moony</a> <a class="" href="#" >日本大王GOO.N</a> <a class="on1" href="#" >日本帮宝适</a> <a class="on1" href="#" >美国小蜜蜂</a> <a class="on1" href="#" >美国加州宝宝CaliforniaBaby</a> <a class="" href="#" >美国艾维诺Aveeno</a> <a class="" href="#" >日本贝亲Pigeon</a> <a class="on1" href="#" >德国博朗</a> <a class="" href="#" >德国NUK</a> <a class="on1" href="#" >美国布朗博士</a> <a class="" href="#" >日本贝塔Betta</a> <a class="" href="#" >美国可么多么</a> </p> 
+         <p> <strong>纸尿裤/湿巾</strong> <a class="on1" href="#" >纸尿裤</a> <a class="" href="#" >拉拉裤</a> <a class="" href="#" >湿巾</a> <a class="" href="#" > NB号</a> <a class="" href="#" > S号</a> <a class="" href="#" > M号</a> <a class="" href="#" > L号</a> <a class="" href="#" > XL/XXL号</a> </p> 
+         <p> <strong>喂养用品</strong> <a class="on1" href="#" >奶瓶/奶嘴</a> <a class="" href="#" >水杯/水壶</a> <a class="" href="#" >牙胶/安抚</a> <a class="on1" href="#" >儿童餐具</a> <a class="" href="#" >消毒/暖奶/调奶</a> <a class="" href="#" >围兜/防溅衣</a> <a class="" href="#" >辅食料理机</a> <a class="one1" href="#" >奶瓶清洁/配件</a> <a class="on1" href="#" >宝宝用品（直邮）</a> </p> 
+         <p> <strong>洗护/护理</strong> <a class="on1" href="#" > 防蚊驱蚊</a> <a class="" href="#" >沐浴护肤</a> <a class="on1" href="#" > 护肤系列</a> <a class="" href="#" >护臀系列</a> <a class="" href="#" >牙刷/牙膏</a> <a class="on1" href="#" >洗浴用具</a> <a class="" href="#" >坐便器</a> <a class="on1" href="#" > 理发器</a> <a class="" href="#" > 医护用品</a> <a class="on1" href="#" >防护用品</a> <a class="" href="#" >指甲钳</a> <a class="" href="#" >洗手液 </a> <a class="on1" href="#" >洗衣液/皂 </a> <a class="" href="#" >奶瓶/果蔬清洗液</a> </p> 
+         <p> <strong>车床座椅/日常用品</strong> <a class="on1" href="#" >安全座椅</a> <a class="" href="#" >手推车</a> <a class="on1" href="#" >婴儿床/童床</a> <a class="" href="#" > 餐椅 </a> <a class="on1" href="#" >儿童行李箱</a> </p> 
+        </div> 
+       </div> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>热门品牌</strong> <a class="" href="#" >瑞蒂贝贝Roidubb</a> <a class="" href="#" >BabyBanz</a> <a class="" href="#" >迪士尼Disney</a> <a class="on1" href="#" >盈泰</a> <a class="" href="#" >妙菲登</a> <a class="" href="#" >戴维贝拉</a> <a class="" href="#" >意婴堡</a> <a class="" href="#" >怡妍宝贝</a> <a class="" href="#" >麦西西</a> <a class="on1" href="#" >好孩子</a> <a class="" href="#" >海绵泡泡</a> <a class="" href="#" >琢伊儿</a> <a class="on1" href="#" >娃娃舒</a> <a class="" href="#" >班杰威尔</a> </p> 
+         <p> <strong>婴幼服饰</strong> <a class="on1" href="#" >新生儿礼盒</a> <a class="" href="#" >连体服/哈衣</a> <a class="" href="#" >婴幼内衣裤</a> <a class="on1" href="#" >婴幼外出服</a> <a class="on1" href="#" >口水巾/汗巾</a> <a class="" href="#" >隔尿垫/尿布</a> <a class="" href="#" >围兜/肚围</a> </p> 
+         <p> <strong>童装</strong> <a class="on1" href="#" >T恤/衬衫</a> <a class="" href="#" >裤子</a> <a class="on1" href="#" >裙子</a> <a class="" href="#" >亲子装</a> <a class="" href="#" >毛衣/针织衫</a> <a class="" href="#" >卫衣/外套</a> <a class="" href="#" >套装</a> <a class="" href="#" >内衣家居服</a> <a class="" href="#" >马甲/背心</a> <a class="" href="#" >棉服/羽绒服</a> <a class="on1" href="#" >宝宝服饰（直邮）</a> </p> 
+         <p> <strong>童鞋</strong> <a class="on1" href="#" >学步/机能鞋</a> <a class="" href="#" >短靴/雪地靴</a> <a class="" href="#" >皮鞋/公主鞋</a> <a class="" href="#" >运动/休闲鞋</a> </p> 
+         <p> <strong>寝居配饰</strong> <a class="" href="#" >婴儿枕</a> <a class="on1" href="#" >睡袋</a> <a class="" href="#" >毛毯被褥</a> <a class="" href="#" >床上用品</a> <a class="" href="#" >浴巾毛巾</a> <a class="" href="#" >新生儿手脚套</a> <a class="" href="#" >帽子手套</a> <a class="" href="#" >宝宝口罩</a> <a class="" href="#" >袜子</a> </p> 
+        </div> 
+       </div> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>热门品牌</strong> <a class="" href="#" >德国Hape</a> <a class="on1" href="#" >乐高LEGO</a> <a class="" href="#" >美国费雪Fisherprice</a> <a class="" href="#" >英国jellycat</a> <a class="on1" href="#" >奥迪双钻</a> <a class="" href="#" >第一教室</a> <a class="" href="#" >贝博氏</a> <a class="" href="#" >迪士尼</a> <a class="on1" href="#" >勾勾手</a> </p> 
+         <p> <strong>积木/绘画/DIY</strong> <a class="" href="#" >积木/拼插</a> <a class="on1" href="#" >磁力片</a> <a class="" href="#" >拼图</a> <a class="" href="#" >彩泥/绘画</a> <a class="on1" href="#" >情景玩具</a> </p> 
+         <p> <strong>爬行健身/毛绒公仔</strong> <a class="" href="#" >爬行垫/毯</a> <a class="on1" href="#" >沙滩/戏水</a> <a class="" href="#" >户外玩具</a> <a class="" href="#" >滑板车/轮滑</a> <a class="on1" href="#" >芭比娃娃</a> <a class="" href="#" >卡通娃娃</a> <a class="on1" href="#" >毛绒玩具</a> <a class="" href="#" >抱枕/靠垫</a> </p> 
+         <p> <strong>动漫/卡通玩具</strong> <a class="on1" href="#" >灵动创想</a> <a class="" href="#" >变形金刚</a> <a class="on1" href="#" >超级飞侠</a> <a class="on1" href="#" >飓风战魂/陀螺</a> <a class="" href="#" >三宝</a> <a class="on1" href="#" >巨神战击队</a> <a class="" href="#" >巴拉拉小魔仙</a> <a class="" href="#" >铠甲勇士</a> <a class="" href="#" >机甲兽神/爆裂飞车</a> <a class="" href="#" >奇积乐园</a> <a class="" href="#" >魔幻车神</a> <a class="" href="#" >其他卡通</a> </p> 
+         <p> <strong>乐器玩具</strong> <a class="" href="#" >钢琴/电子琴</a> <a class="" href="#" >吉他/贝斯</a> <a class="" href="#" >其他乐器</a> </p> 
+         <p> <strong>书籍文具</strong> <a class="on1" href="#" >绘本</a> <a class="" href="#" >百科探索</a> <a class="" href="#" >儿童文学</a> <a class="on1" href="#" >有声读物</a> </p> 
+        </div> 
+       </div> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>热门品牌</strong> <a class="on1" href="#" >安满Anmum</a> <a class="on1" href="#" >开丽Kaili</a> <a class="" href="#" >美国palmer's</a> <a class="on1" href="#" >日本三洋DACCO</a> <a class="" href="#" >玫瑰太太</a> <a class="" href="#" >神豆Simdoo</a> <a class="on1" href="#" >美国Lansinoh</a> <a class="" href="#" >瑞士美德乐Medela</a> <a class="on1" href="#" >德国喜宝Hipp</a> <a class="on1" href="#" >碧缇丝</a> </p> 
+         <p> <strong>孕妈营养</strong> <a class="" href="#" >孕妇奶粉</a> <a class="on1" href="#" > DHA/叶酸/备孕</a> <a class="" href="#" > 孕期营养</a> <a class="on1" href="#" > 产后调理</a> <a class="on1" href="#" >催奶茶</a> </p> 
+         <p> <strong>孕妈护肤</strong> <a class="on1" href="#" >面部护理</a> <a class="on1" href="#" > 妊娠纹/去疤</a> <a class="" href="#" >身体护理</a> <a class="on1" href="#" >乳房护理</a> <a class="" href="#" >口腔护理</a> <a class="on1" href="#" >洗发护发</a> </p> 
+         <p> <strong>孕妇穿着</strong> <a class="" href="#" >防辐射服</a> <a class="" href="#" >哺乳文胸</a> <a class="on1" href="#" >长裤/托腹裤</a> <a class="" href="#" >孕妇装</a> <a class="on1" href="#" >孕妇内裤</a> </p> 
+         <p> <strong>产前产后</strong> <a class="on1" href="#" >防溢乳垫</a> <a class="" href="#" > 吸奶器</a> <a class="on1" href="#" > 母乳储存</a> <a class="on1" href="#" > 护腰枕</a> <a class="on1" href="#" > 待产包</a> <a class="on1" href="#" >塑身/束腹带 </a> <a class="" href="#" >托腹带</a> <a class="" href="#" >产妇卫生巾</a> <a class="" href="#" >产妇垫</a> <a class="on1" href="#" >妈咪包</a> <a class="on1" href="#" >背婴带</a> <a class="" href="#" >胎心仪</a> <a class="on1" href="#" >孕产用品（直邮）</a> </p> 
+        </div> 
+       </div> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>热门品牌</strong> <a class="" href="#" >兰蔻Lancome</a> <a class="on1" href="#" >美国卡雷小子Caribbean Sol</a> <a class="" href="#" >韩国可莱丝Clinie</a> <a class="" href="#" >九朵云Cloud 9</a> <a class="" href="#" >资生堂Shiseido</a> <a class="" href="#" >新西兰红印Red Seal</a> <a class="" href="#" >兰芝Laneige</a> <a class="on1" href="#" >美国水宝宝Coppertone</a> <a class="" href="#" >雅诗兰黛Est&eacute;e Lauder</a> <a class="" href="#" >倩碧Clinique</a> <a class="" href="#" >韩国爱茉莉Amore</a> <a class="" href="#" >日本花王Laurier</a> </p> 
+         <p> <strong>夏季优选</strong> <a class="on1" href="#" >防晒/隔离</a> <a class="on1" href="#" >补水面膜</a> <a class="on1" href="#" >脱毛膏</a> <a class="on1" href="#" >防蚊防晒</a> <a class="on1" href="#" >沙滩/戏水</a> </p> 
+         <p> <strong>面部护肤</strong> <a class="on1" href="#" >卸妆</a> <a class="" href="#" >洁面</a> <a class="" href="#" >化妆/爽肤水</a> <a class="on1" href="#" >面霜/乳液</a> <a class="" href="#" >眼部</a> <a class="" href="#" >精华</a> <a class="" href="#" >护肤套装</a> <a class="on1" href="#" >美妆个护（直邮）</a> </p> 
+         <p> <strong>香水彩妆</strong> <a class="on1" href="#" >女士香水</a> <a class="" href="#" >粉底/BB霜/遮瑕</a> <a class="on1" href="#" >眉笔/眉粉</a> <a class="" href="#" >睫毛膏</a> <a class="on1" href="#" >眼线/眼影</a> <a class="on1" href="#" >唇膏/唇彩</a> <a class="" href="#" > 腮红</a> <a class="" href="#" >美妆工具</a> </p> 
+         <p> <strong>洗发护发/身体护肤/口腔护理/女性护理</strong> <a class="on1" href="#" >洗发护发</a> <a class="" href="#" >直发器/卷发器/电吹风</a> <a class="on1" href="#" >身体乳/沐浴露</a> <a class="" href="#" >牙膏/牙刷</a> <a class="" href="#" >卫生巾/护垫</a> </p> 
+        </div> 
+       </div> 
+       <div class="sub-pannel"> 
+        <div class="nelBox"> 
+         <p> <strong>热门品牌</strong> <a class="on1" href="#" >澳洲德运devondale</a> <a class="" href="#" >安佳</a> <a class="on1" href="#" >德国碧然德Brita</a> <a class="" href="#" >新西兰康维他</a> <a class="on1" href="#" >泉林本色</a> <a class="" href="#" >北欧欧慕Nathome</a> <a class="on1" href="#" >惠人Hurom</a> </p> 
+         <p> <strong>成人奶粉/食品饮料</strong> <a class="on1" href="#" >全脂奶粉</a> <a class="" href="#" > 脱脂奶粉</a> <a class="on1" href="#" > 高钙奶粉</a> <a class="" href="#" > 羊奶粉</a> <a class="" href="#" >休闲食品</a> <a class="on1" href="#" >坚果/果仁</a> <a class="" href="#" >蜂蜜</a> <a class="" href="#" >冲调饮品</a> <a class="on1" href="#" >酸奶/冰淇淋</a> <a class="on1" href="#" >成人奶粉（直邮）</a> <a class="on1" href="#" >食品饮料（直邮）</a> </p> 
+         <p> <strong>生活日用/居家/布艺</strong> <a class="on1" href="#" >安全检测</a> <a class="" href="#" >家居收纳</a> <a class="" href="#" >净化除味</a> <a class="on1" href="#" >口罩</a> <a class="" href="#" >家庭清洁</a> <a class="" href="#" >衣架/晾晒</a> <a class="on1" href="#" >雨伞/雨具</a> <a class="on1" href="#" >水杯/水壶</a> <a class="" href="#" >内衣/睡衣</a> <a class="on1" href="#" >毛巾浴巾</a> <a class="" href="#" >床上用品</a> <a class="on1" href="#" >居家用品（直邮）</a> <a class="on1" href="#" >轻奢生活（直邮）</a> </p> 
+         <p> <strong>个护健康</strong> <a class="on1" href="#" >按摩器/瘦腿仪</a> <a class="on1" href="#" >体重秤/血压计</a> <a class="" href="#" >足浴器/浴桶</a> <a class="" href="#" >磨毛器/粘毛器</a> </p> 
+         <p> <strong>麦乐购礼品卡</strong> <a class="" href="#" >500元</a> <a class="" href="#" >1000元</a> <a class="" href="#" >2000元</a> <a class="" href="#" >5000元</a> <a class="" href="#" >10000元</a> </p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+  <script language="javascript" type="text/javascript">
+//顶部左侧菜单
+silderbar("#ul-cont li", "#menuCon .sub-pannel");
+$("#search_key").autocomplete("#", {
+delay: 10,
+minChars: 1,
+matchSubset: 1,
+matchContains: 10,
+cacheLength: 10,
+onItemSelect: selectItem,
+onFindValue: findValue,
+formatItem: formatItem,
+autoFill: false,
+width: 401
+}).result(function (event, data, formatted) {
+if (formatted != undefined) {
+window.location.href = "https://www.gou.com/search/index.do?q=" + filterKey(formatted);
+}
+});
+</script> 
+  <script type="text/javascript">
+jQuery(function () {
+//购物车右侧列表切换以及展开收缩
+clickCart()
+cuteCode({
+obj: ".letters[alway=1]",
+txt: ".words-warp b",
+swing: 36,
+turnup: true,
+way: "turnup"
+});
+//nav导航跟随划过
+indexNavon();
+var url = window.location.href.toLowerCase();
+if (url.indexOf("whychoosem6go") > 0) {
+$("#whychoosem6go").addClass("on");
+indexNavon();
+}
+if ($("#WorthBuying").size() > 0) {
+$("#ShenMaZhideMai").addClass("on");
+indexNavon();
+}
+if (url.indexOf("/topic/zhiyou") > 0) {
+$("#GlobalTopic").addClass("on");
+indexNavon();
+}
+if ($("#jinkounaifen").size() > 0) {
+var a_url = $("#jinkounaifen-a").attr("href").toLowerCase();
+if (url == a_url) {
+$("#jinkounaifen").addClass("on");
+indexNavon();
+}
+}
+});
+</script> 
+
+</script> 
+  <!--购物车--> 
+  <div class="gou-cart"> 
+   <div class="whole"> 
+    <div class="bearImg">
+     <img src="image/bearCart.png" width="100%" />
+    </div> 
+    <div class="cart-nav"> 
+     <div class="cart-nav-list"> 
+      <ul> 
+       <li><a list="0" href="javascript:;" id="userBtn"><i class="account"></i></a> </li> 
+       <li class="cart-i"><a list="1" href="javascript:;" class="message_list" id="shopCartLayerBtn"><i id="collectBox" class="message"></i> 
+         <div class="span">
+           购物车
+         </div> <span class="cart_num" id="GQuantity">0</span> </a></li> 
+      </ul> 
+     </div> 
+     <div class="cart-nav-list bot"> 
+      <ul> 
+       <li class="kf"> <a href="javascript:;" style="cursor:default"><i class="wxi"></i></a> 
+        <div class="span">
+         客户经理
+        </div> <a href="javascript:;"><i class="servi"></i></a> 
+        <div class="span">
+         客服
+        </div> 
+        <div class="txt-pro" w="315"> 
+         <p class="tactusImg"> <i class="closeThis"></i> 
+          <!--登录前--> <span class="LoginBefore" style="display:none"> <a class="tactuslogin" href="javascript:;"><em class="e2">登录</em></a> <span class="beforeTit"><em></em></span> <span class="beforeTip"><em></em></span> <img class="i1" width="315" src="https://www.gou.com/Content/newIndex/image/loginBefore.png?v=201611151" /> </span> 
+          <!--登录后--> <span class="LoginAfter" style="display:none"> <span class="afterTit"><em></em></span> <span class="afterTip"><em></em></span> <img class="i1" width="315" src="image/kefu.png" /> <img class="i2" src="/" alt="" /> <img class="i3_1 headIco" src="/" alt="" /> <img class="i3_2 headIco" src="/" alt="" /> </span> </p> 
+         <div class="tactus" style="display:none"> 
+          <a href="javascript:;" id="kfLink">联系客服</a> 
+         </div> 
+        </div> </li> 
+       <li><a list="2" href="javascript:;"><i class="collection"></i></a> 
+        <div class="txt-pro"> 
+         <a list="2" href="javascript:;">我的收藏</a>
+        </div> </li> 
+       <li><a list="3" href="javascript:;"><i class="view"></i></a> 
+        <div class="txt-pro"> 
+         <a list="3" href="javascript:;">浏览历史</a>
+        </div> </li> 
+       <li><a href="javascript:;"><i class="payto"></i></a> 
+        <div class="module-pro"> 
+         <div class="noneCon" style="padding:0"> 
+          <img src="image/kefu.png" /> 
+         </div> 
+        </div> </li> 
+       <li><a href="#" ><i class="feedicon"></i></a> 
+        <div class="txt-pro"> 
+         <a href="#">反馈</a>
+        </div> </li> 
+       <li id="backTop"><a href="javascript:;"><i class="backTop"> <img src="/Content/newIndex/image/backTop.png" width="35" height="35" /></i> </a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="cart-main-list" class="cart-main-list"> 
+    <div class="sideLogin" id="sideLogin"> 
+    </div> 
+    <!--加入购物车的商品列表--> 
+    <div class="shopcar"> 
+    </div> 
+    <!--我的收藏--> 
+    <div class="cart-history" id="divcollect"> 
+    </div> 
+    <!--浏览过的商品--> 
+    <div class="cart-history" id="divhistory"> 
+    </div> 
+    <div class="active"> 
+     <h3></h3> 
+     <div class="public-list"> 
+      <ol class="act"> 
+       <li>
+        <!--<a  href="" class="img">--> <img src="" style="cursor:pointer" width="255" height="120" />
+        <!--</a>--> <p class="name"> </p> </li> 
+       <li>
+        <!--<a  href="" class="img">--> <img src="" style="cursor:pointer" width="255" height="120" />
+        <!--</a>--> <p class="name"> </p> </li> 
+       <li>
+        <!--<a  href="" class="img">--> <img src="" style="cursor:pointer" width="255" height="120" />
+        <!--</a>--> <p class="name"> </p> </li> 
+       <li>
+        <!--<a  href="" class="img">--> <img src="" style="cursor:pointer" width="255" height="120" />
+        <!--</a>--> <p class="name"> </p> </li> 
+       <li>
+        <!--<a  href="" class="img">--> <img src="" style="cursor:pointer" width="255" height="120" />
+        <!--</a>--> <p class="name"> </p> </li> 
+       <li>
+        <!--<a  href="" class="img">--> <img src="" style="cursor:pointer" width="255" height="120" />
+        <!--</a>--> <p class="name"> </p> </li> 
+      </ol> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <script type="text/javascript" src="js/jquery.scrollload.js"></script> 
+  <!--新用户全屏弹层--> 
+ 
+</script> 
+  <!-- 遮罩层  --> 
+  <div class="scratchMask"> 
+  </div> 
+  <!--新用户弹层--> 
+  <div class="newUser" style="display: none;"> 
+   <span class="winClose"></span>
+   <a id="alink" href=""> <img id="aimg" src="" /></a> 
+  </div> 
+  <article> 
+   <div id="sildeImg" class="gou-category-menu"> 
+    <div class="pic-opera"> 
+     <!--幻灯片右侧广告（ADr）--> 
+     <div class="market-ad-r"> 
+      <a class="last1" href="#"  ><img src="image/ADr1.jpg" /></a> 
+      <a class="last2" href="#"  ><img src="image/ADr2.jpg" /></a> 
+      <a class="last3" href="#"  ><img src="image/ADr3.jpg"/></a> 
+     </div> 
+     <!--幻灯片切换按钮 hdp--> 
+     <ul id="marketBtn" class="market-btn"> 
+            <li><a href="#" ><img src="image/hdp1.jpg"/></a></li> 
+            <li><a href="#" ><img src="image/hdp2.jpg"/></a></li> 
+            <li><a href="#" ><img src="image/hdp3.jpg"/></a></li> 
+            <li><a href="#" ><img src="image/hdp4.jpg"/></a></li> 
+            <li><a href="#" ><img src="image/hdp5.jpg"/></a></li> 
+     </ul> 
+    </div> 
+    <!--main--> 
+    <!--silder img--> 
+    <div class="pic-slide"> 
+     <!--焦点图列表--> 
+     <div id="sildeImg" class="menu-content"> 
+      <!--焦点图列表--> 
+      <div class="market-silde"> 
+        <div class="market-pannel"> 
+          <a href="#"> <img color="#d10821" src="image/jdt1.jpg"/> </a> 
+        </div> 
+      </div> 
+      <div class="market-silde"> 
+        <div class="market-pannel"> 
+          <a href="#"> <img color="#fedecc" src="image/jdt2.jpg"  /> </a> 
+        </div> 
+      </div> 
+      <div class="market-silde"> 
+        <div class="market-pannel"> 
+          <a href="#"> <img color="#fee4e5" src="image/jdt3.jpg"/> </a> 
+        </div> 
+      </div> 
+      <div class="market-silde"> 
+        <div class="market-pannel"> 
+          <a href="#"> <img color="#fee2d4" src="image/jdt4.jpg"/> </a> 
+        </div> 
+      </div> 
+      <div class="market-silde"> 
+        <div class="market-pannel"> 
+          <a href="#"> <img color="#83d7ee" src="image/jdt5.jpg" /> </a> 
+        </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- end--> 
+  </article> 
+  <!--整点抢--> 
+  <div class="article" id="div_MLastMinute"> 
+  </div> 
+  <!--通栏 一排2个广告位--> 
+  <div class="article mtop25"> 
+   <div class="banAds"> 
+    <a href="#"><img src="image/TOP1.jpg" /></a> 
+    <a class="last" href="#"  ><img src="image/TOP2.jpg"  /></a> 
+   </div> 
+  </div> 
+  <!--妈妈乐购--> 
+  <div class="article mtop25"> 
+   <div class="tescol" id="div_Recommend"></div> 
+   <!-- <div class="tescor">
+<a  href="#"  ><img src="image/tu1.jpg" alt="" /></a>
+</div>--> 
+   <div class="clearfix"></div> 
+  </div> 
+  <!--天天特卖--> 
+  <div class="dailySale article mtop25" id="div_TeMai"> 
+  </div> 
+  <!--猜你喜欢--> 
+
+  <!--通栏广告--> 
+  <!--1层--> 
+  <div floor="0" class="article mtop25"> 
+   <div class="layer"> 
+    <div class="leftCon"> 
+     <h3 class="floorTit"><b>1F</b>宝宝奶粉</h3> 
+     <div class="subCate"> 
+      <a class="on" href="/niunaifen" >牛奶粉</a> 
+      <a href="/yangnaifen" >羊奶粉</a> 
+      <a class="on" href="/youjinaifen" >有机奶粉</a> 
+      <a href="/zaochanernaifen" >早产儿奶粉</a> 
+      <a href="/buhanrutang" >乳糖不耐受</a> 
+      <a class="on" href="/fangguominnaifen" >牛乳过敏</a> 
+      <a href="/tianjiayishengjunnaifen" >益生菌奶粉</a> 
+      <a href="" ></a> 
+      <a href="/0_6geyue" >0-6个月</a> 
+      <a href="/6_12geyue" >6-12个月</a> 
+      <a href="/1_2sui" >1-2岁</a> 
+      <a href="/2_3sui" >2-3岁</a> 
+      <a href="/3suiyishang" >3-6岁</a> 
+      <a href="/ertongnaifen" >儿童奶粉</a> 
+     </div> 
+     <div class="brand brTab"> 
+      <div class="prev"></div> 
+      <div class="next"></div> 
+      <div class="br-b"> 
+       <ul class="br-list"> 
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <!--leftCon end--> 
+    <div class="midFir"> 
+     <a class="topImg" href="#" ><img src="image/tu2.jpg" alt="" /></a> 
+     <a class="botImg mtop10" href="#" ><img src="image/tu3.jpg" alt="" /></a> 
+    </div> 
+    <div class="midSec"> 
+     <a class="topImg" href="#" ><img src="image/tu1.jpg" alt="" /></a> 
+     <a class="botImg mtop10" href="#" ><img src="image/tu22.jpg" alt="" /></a> 
+    </div> 
+    <div class="rightCon"> 
+     <a class="aImg" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+     <a class="aImg mtop10" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+     <a class="aImg mtop10" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+    </div> 
+    <div class="clearfix"> 
+    </div> 
+   </div> 
+  </div> 
+  <!--1层底部--> 
+  <!--1层结束--> 
+  <!--2层--> 
+  <div floor="1" class="article mtop25"> 
+   <div class="layer"> 
+    <div class="leftCon"> 
+     <h3 class="floorTit"><b>2F</b>宝宝辅食</h3> 
+     <div class="subCate"> 
+      <a class="on" href="/mifenmaifen" >米粉/米糊</a> 
+      <a href="/rouniguonicaini" >果/蔬/肉泥</a> 
+      <a class="on" href="/yuchang" >鱼肠/肉肠</a> 
+      <a class="on" href="/baobaolingshi" >宝宝零食</a> 
+      <a href="/miantiaolei" >营养面条</a> 
+      <a href="/yinliaoguozhi" >饮料/果汁</a> 
+      <a href="/tiaoweibanfan" >调味/拌饭</a> 
+      <a class="on" href="/baobaofushi-fushitianjiaqi" >初加辅食</a> 
+      <a href="/baobaofushi-4_6monthfushi" >4-6个月</a> 
+      <a href="/baobaofushi-7_9monthfushi" >7-9个月</a> 
+      <a href="/baobaofushi-10_12monthfushi" >10-12个月</a> 
+      <a href="/baobaofushi-12_36monthfushi" >12-36个月</a> 
+      <a href="" ></a> 
+      <a href="" ></a> 
+     </div> 
+     <div class="brand brTab"> 
+      <div class="prev"></div> 
+      <div class="next"></div> 
+      <div class="br-b"> 
+       <ul class="br-list"> 
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <!--leftCon end--> 
+    <div class="midFir"> 
+     <a class="topImg" href="#" ><img src="image/tu4.jpg" alt="" /></a> 
+     <a class="botImg mtop10" href="#" ><img src="image/tu5.jpg" alt="" /></a> 
+    </div> 
+    <div class="midSec"> 
+     <a class="topImg" href="#" ><img src="image/tu1.jpg" alt="" /></a> 
+     <a class="botImg mtop10" href="#" ><img src="image/tu22.jpg" alt="" /></a> 
+    </div> 
+    <div class="rightCon"> 
+     <a class="aImg" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+     <a class="aImg mtop10" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+     <a class="aImg mtop10" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+    </div> 
+    <div class="clearfix"> 
+    </div> 
+   </div> 
+  </div> 
+  <!--2层底部--> 
+  <!--2层结束--> 
+  <!--3层--> 
+  <div floor="2" class="article mtop25"> 
+   <div class="layer"> 
+    <div class="leftCon"> 
+     <h3 class="floorTit"><b>3F</b>营养健康</h3> 
+     <div class="subCate"> 
+      <a href="/yuyoudha" >鱼油/DHA</a> 
+      <a class="on" href="/gaimeixintie" >钙镁锌铁</a> 
+      <a class="on" href="/yishengjun" >益生菌</a> 
+      <a href="/tigaomianyi" >提高免疫力</a> 
+      <a href="/meirongyangyan" >美容养颜</a> 
+      <a class="on" href="/shoushenpaidu" >瘦身排毒</a> 
+      <a href="/zengqiangdikangli" >增强抵抗力</a> 
+      <a class="on" href="/tiaojiesangao" >调节三高</a> 
+      <a href="/ganshenyanghu" >肝肾养护</a> 
+      <a class="on" href="/huanjiepilao" >缓解疲劳</a> 
+      <a class="on" href="/gugejiankang" >骨骼健康</a> 
+      <a href="/gaishanpinxue" >改善贫血</a> 
+      <a href="/chengrenyesuan" >叶酸</a> 
+      <a class="on" href="/yanhuanshuailao" >延缓衰老</a> 
+     </div> 
+     <div class="brand brTab"> 
+      <div class="prev"></div> 
+      <div class="next"></div> 
+      <div class="br-b"> 
+       <ul class="br-list"> 
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+        <li> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> <a href="#" > <img src="image/tu00.jpg" /> </a> </li>
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <!--leftCon end--> 
+    <div class="midFir"> 
+     <a class="topImg" href="#" ><img src="image/tu6.jpg" alt="" /></a> 
+     <a class="botImg mtop10" href="#" ><img src="image/tu7.jpg" alt="" /></a> 
+    </div> 
+    <div class="midSec"> 
+     <a class="topImg" href="#" ><img src="image/tu1.jpg" alt="" /></a> 
+     <a class="botImg mtop10" href="#" ><img src="image/tu22.jpg" alt="" /></a> 
+    </div> 
+    <div class="rightCon"> 
+     <a class="aImg" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+     <a class="aImg mtop10" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+     <a class="aImg mtop10" href="#" ><img src="image/tu11.jpg" alt="" /></a> 
+    </div> 
+    <div class="clearfix"> 
+    </div> 
+   </div> 
+  </div> 
+  <!--3层底部--> 
+  <!--3层结束--> 
+  <!--晒单区--> 
+  <div class="article mtop25"> 
+   <div class="master"> 
+    
+   <div class="sunArea" id="div_SunArea"></div> 
+   <!--sunArea end--> 
+   <div class="clearfix"> 
+   </div> 
+  </div> 
+  <div class="footBg"></div> 
+  <!--滚动条滚动到一定位置时候 显示 悬浮搜索框代码--> 
+  <div class="flyheader"> 
+   <div class="flyheaderBox"> 
+    <a href="#" class="flylogo"></a> 
+    <form id="searchForm" action="https://www.gou.com/search/index.do" onsubmit="return search_submit()"> 
+     <div class="flysearch"> 
+      <input type="text" id="search_key1" name="q" class="txt" value="请输入商品名称,支持拼音搜索" onfocus="search_key_focus(this)" onblur="search_key_blur(this)" onmouseover="this.style.borderColor='#666'" onmouseout="this.style.borderColor=''" /> 
+      <input name="" type="submit" value="搜索" class="sub" /> 
+     </div> 
+    </form> 
+    <div class="flyapp"> 
+     <a href="#" ><i class="app_icon"></i>手机麦乐购</a> 
+    </div> 
+   </div> 
+  </div> 
+  <!--左侧浮动二维码--> 
+  <div class="leftSus"> 
+  </div> 
+  <!--跳转到相应类目位置快捷按钮--> 
+  <!--跳转到相应类目位置快捷按钮--> 
+  <div class="mui-lift"> 
+   <div class="sn-nav-wrapper"> 
+    <a href="javascript:;"> 
+     <div class="snbg1"></div> <font>宝宝奶粉</font> </a> 
+    <a href="javascript:;"> 
+     <div class="snbg2"></div> <font>宝宝辅食</font> </a> 
+    <a href="javascript:;"> 
+     <div class="snbg6"></div> <font>营养健康</font> </a> 
+    <a href="javascript:;"> 
+     <div class="snbg3"></div> <font>宝宝用品</font> </a> 
+    <a href="javascript:;"> 
+     <div class="snbg4"></div> <font>宝宝服饰</font> </a> 
+    <a href="javascript:;"> 
+     <div class="snbg5"></div> <font>宝宝玩具</font> </a> 
+    <a href="javascript:;"> 
+     <div class="snbg7"></div> <font>孕产用品</font> </a> 
+    <a href="javascript:;"> 
+     <div class="snbg9"></div> <font>化妆品</font> </a> 
+    <a href="javascript:;"> 
+     <div class="snbg8"></div> <font>居家生活</font> </a> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+//模块延迟加载
+var cll = new ContentLazyLoad();
+//loadMLastMinuteData()
+cll.addCallBack($("#div_MLastMinute"), function () {
+loadMLastMinuteData();
+// loadGuessYouLikeData();
+});
+//loadRecommendData();
+//今日半价
+cll.addCallBack($("#div_Recommend"), function () {
+loadRecommendData();
+});
+//loadTeMaiData();
+//特买
+cll.addCallBack($("#div_TeMai"), function () {
+loadTeMaiData();
+//庞军伟 2015-11-21 提前至特买加载
+loadGuessYouLikeData();
+});
+//猜你喜欢
+//loadGuessYouLikeData();
+cll.addCallBack($("#div_GuessYouLike"), function () {
+//loadGuessYouLikeData();
+});
+//猜你喜欢下边  您关注的商品
+cll.addCallBack($("#divGoodsVisit"), function () {
+LoadRecentlyGoodsVisit();
+}); 
+//晒单评论
+//loadSunAreaData();
+cll.addCallBack($("#div_SunArea"), function () {
+loadSunAreaData();
+});
+cll.scrollBind();
+//幻灯片切换
+silderPlay(3000, 300);
+</script> 
+  <script type="text/javascript">
+$(function () {
+var value = "请输入商品名称,支持拼音搜索";
+$('#search_key1').blur(function () {
+search_key_blur(this, value);
+});
+$('#search_key1').focus(function () {
+search_key_focus(this, value);
+});
+});
+$("#search_key1").autocomplete("https://www.gou.com/search/getkey.do", {
+delay: 10,
+minChars: 1,
+matchSubset: 1,
+matchContains: 10,
+cacheLength: 10,
+onItemSelect: selectItem,
+onFindValue: findValue,
+formatItem: formatItem,
+autoFill: false,
+width: 399
+}).result(function (event, data, formatted) {
+if (formatted != undefined) {
+window.location.href = "#" + formatted;
+}
+});
+</script> 
+  <script type="text/javascript">
+$(function () {
+userBaby();
+})
+//滚动到一定距离显示header
+commonScroll({
+downScroll: 1800,
+upScroll: 1800,
+downfn: function (obj) {
+$("div.flyheader").show().stop().animate({ top: 0 }, 200)
+},
+upfn: function (obj) {
+$("div.flyheader").stop().animate({ top: -55 }, 200, function () {
+$(this).hide();
+})
+}
+});
+base.posDiv(".mui-lift", 200)
+var screenStyle = $(window).width();
+if (screenStyle >= 1420) {
+//滚动到楼层之前的左侧浮层
+commonScroll({
+downScroll: 500,
+upScroll: 500,
+endPos: [".leftSus", 2793, 2993],
+downfn: function () {
+$(".leftSus").fadeIn(300)
+},
+upfn: function () {
+$(".leftSus").fadeOut(300)
+}
+});
+}
+//点击左侧浮层滚动到相应的位置
+clickScroll(".sn-nav-wrapper a");
+try {
+var fl = 40;
+var NA = navigator.userAgent.toLowerCase();
+if (NA.indexOf("se") > -1) {
+fl = 10;
+}
+//        setTimeout(function () {
+//           
+//        }, 1000);
+$("a img").lazyload({ placeholder: "#", effect: "fadeIn", threshold: 20, failurelimit: fl });
+} catch (E) { }
+$(function () {
+silder({ box: ".brTab",
+prev: ".prev",
+next: ".next",
+scrollbox: ".br-list",
+autoPlay: true,
+cycle: true,
+tip: 1,
+few: 1
+})
+})
+function showPic() {
+if ($(".market-ad-r img").size() > 0) {
+$(".market-ad-r img").each(function () {
+$(this).attr("src", $(this).attr("original"));
+})
+}
+if ($(".topAd").size() > 0) {
+$(".topAd img").attr("src", $(".topAd img").attr("original"));
+}
+if ($(".rightCon img").size() > 0) {
+$(".rightCon img").each(function () {
+$(this).attr("src", $(this).attr("original"));
+})
+}
+}
+</script> 
+  <!--主体内容结束--> 
+  <footer id="footer"> 
+   <!--底部导航帮助--> 
+   <!--foot end--> 
+   <!--尾部代码开始--> 
+   <div class="footer"> 
+    <div class="promise mtop30"> 
+     <div class="article"> 
+      <dl class="pro1"> 
+       <span class="i1"></span> 
+       <dt>
+        海外采购
+       </dt> 
+       <dd>
+        精选海外优质品牌
+       </dd> 
+      </dl> 
+      <dl class="pro2"> 
+       <span class="i2"></span> 
+       <dt>
+        国内外三重检疫
+       </dt> 
+       <dd>
+        严把质量关 无忧购物
+       </dd> 
+      </dl> 
+
+      <dl class="pro2"> 
+       <span class="i4"></span> 
+       <dt>
+        专属育婴师服务
+       </dt> 
+       <dd>
+        一对一专业育婴指导
+       </dd> 
+      </dl> 
+      <dl class="pro3"> 
+       <span class="i5"></span> 
+       <dt>
+        满188元包邮
+       </dt> 
+       <dd>
+        尊享免费航空快递
+       </dd> 
+      </dl> 
+     </div> 
+    </div> 
+    <div class="article"> 
+     <div class="forLink"> 
+      <dl> 
+       <dt>
+        购物指南
+       </dt> 
+       <dd>
+        <a href="#" >为什么选麦乐购</a>
+       </dd> 
+       <dd>
+        <a href="#" >购物流程</a>
+       </dd> 
+       <dd>
+        <a href="#" >正品保证</a>
+       </dd> 
+       <dd>
+        <a href="#" >手机麦乐购</a>
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        配送方式
+       </dt> 
+       <dd>
+        <a href="#" >跨境电商介绍</a>
+       </dd> 
+       <dd>
+        <a href="#" >报关说明</a>
+       </dd> 
+       <dd>
+        <a href="#" >配送说明</a>
+       </dd> 
+       <dd>
+        <a href="#" >国际快递查询</a>
+       </dd> 
+       <dd>
+        <a href="#" >国内快递查询</a>
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        支付方式
+       </dt> 
+       <dd>
+        <a href="#" >支付方式介绍</a>
+       </dd> 
+       <dd>
+        <a href="#" >优惠券支付</a>
+       </dd> 
+       <dd>
+        <a href="#" >余额支付</a>
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        售后服务
+       </dt> 
+       <dd>
+        <a href="#" >联系客服</a>
+       </dd> 
+       <dd>
+        <a href="#" >验货签收</a>
+       </dd> 
+       <dd>
+        <a href="#" >退换货政策</a>
+       </dd> 
+       <dd>
+        <a href="#" >退款说明</a>
+       </dd> 
+       <dd>
+        <a href="#" >关于发票</a>
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        特色服务
+       </dt> 
+       <dd>
+        <a href="#" >麦豆说明</a>
+       </dd> 
+       <dd>
+        <a href="#" >会员级别</a>
+       </dd> 
+       <dd>
+        <a href="#" >商务会员卡</a>
+       </dd> 
+       <dd>
+        <a href="#" >VIP会员尊享卡</a>
+       </dd> 
+       <dd>
+        <a href="#" >妈妈推广计划</a>
+       </dd> 
+      </dl> 
+      <div class="gouApp"> 
+       <h3>手机麦乐购</h3> 
+       <img src="image/sjmlg.jpg" width="95" height="95" /> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="about"> 
+     <p class="abLink"><a href="#" >关于麦乐购</a><span>|</span><a href="#" >保税店专区</a><span>|</span><a href="#" >服务条款</a><span>|</span><a href="#" >商户合作</a><span>|</span><a href="#" >O2O合作</a><span>|</span><a href="#" >联系我们</a><span>|</span><a href="#" >友情链接</a><span>|</span><a href="#" >诚聘英才</a><span>|</span><a href="#" >手机麦乐购</a><span>|</span><a href="#" >意见建议</a><span>|</span><a href="#" >媒体报道</a> </p> 
+     <p style=" margin-top:10px;"><a  style="color:black" href="#"> <img src="https://res.m6go.com/content/dgH/image/gonganbeian.png"  />京公网安备：11010102000812号</a> | 中华人民共和国出版物经营许可证编号：150023 | 广电制作经营许可证：(京)字第06356号</p>
+     <p>网络文化经营许可证：京网文(2016)4048-509号 | 食品经营许可证编号：JY11101070034785 | 食品卫生许可证编号：110101_JX0020 | 互联网药品信息服务证书编号：(京)-2016-0095</p>
+     <p>Copyright 2006 - 2016 北京天使圣婴科技有限公司版权所有 | 经营许可证编号：京ICP证150027号 | 营业执照：911101010672694772 | 京ICP备14022296号 | 中国服务热线：400-666-6600</p> 
+    </div> 
+   </div> 
+
+   <!--尾部代码结束--> 
+  </footer> 
+  <!-- <script src="../js/mgo.js" type="text/javascript"></script>    -->
+ </body>
+</html>
